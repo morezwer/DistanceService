@@ -1,6 +1,6 @@
 using System.Collections.Concurrent;
 using DistanceService.Application.Interfaces;
-using DistanceService.Options;
+using DistanceService.Infrastructure.Options;
 using Microsoft.Extensions.Options;
 
 namespace DistanceService.Infrastructure.Services;

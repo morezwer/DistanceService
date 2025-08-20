@@ -1,4 +1,4 @@
-namespace DistanceService.Options;
+namespace DistanceService.Infrastructure.Options;
 
 /// <summary>
 /// Настройки для кэширования. Позволяют ограничить количество

@@ -1,9 +1,9 @@
 using DistanceService.Application.Interfaces;
 using DistanceService.Domain.Entities;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
-namespace DistanceService.Controllers;
+namespace DistanceService.Presentation.Controllers;
 
 /// <summary>
 /// Предоставляет HTTP API для вычисления расстояния между двумя

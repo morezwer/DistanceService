@@ -1,4 +1,4 @@
-namespace DistanceService.Options;
+namespace DistanceService.Application.Options;
 
 /// <summary>
 /// Настройки, используемые при вычислении расстояний между

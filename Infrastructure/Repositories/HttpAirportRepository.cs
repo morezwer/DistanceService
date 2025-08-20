@@ -2,7 +2,8 @@ using System.Net;
 using System.Text.Json;
 using DistanceService.Application.Interfaces;
 using DistanceService.Domain.Entities;
-using DistanceService.Options;
+using DistanceService.Extensions;
+using DistanceService.Infrastructure.Options;
 using Microsoft.Extensions.Options;
 
 namespace DistanceService.Infrastructure.Repositories;
@@ -19,11 +20,11 @@ public sealed class HttpAirportRepository : IAirportRepository
 {
     private readonly HttpClient _httpClient;
     private readonly ICacheService<Airport> _cache;
-    private readonly Options.AirportApiOptions _options;
+    private readonly AirportApiOptions _options;
 
     public HttpAirportRepository(HttpClient httpClient,
                                  ICacheService<Airport> cache,
-                                 Microsoft.Extensions.Options.IOptions<Options.AirportApiOptions> options)
+                                 IOptions<AirportApiOptions> options)
     {
         _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
         _cache = cache ?? throw new ArgumentNullException(nameof(cache));
@@ -93,29 +94,5 @@ public sealed class HttpAirportRepository : IAirportRepository
         _cache.Set(iata, airport, TimeSpan.FromMinutes(_options.CacheDurationMinutes));
 
         return airport;
-    }
-}
-
-/// <summary>
-/// Вспомогательные методы расширения для <see cref="JsonElement"/>,
-/// упрощающие извлечение необязательных строковых свойств.
-/// Эти методы расположены в том же файле, что и
-/// <see cref="HttpAirportRepository"/>, так как являются внутренними
-/// деталями реализации репозитория и не предназначены для
-/// использования вне сборки.
-/// </summary>
-internal static class JsonElementExtensions
-{
-    /// <summary>
-    /// Пытается получить свойство как строку. Если свойство не
-    /// существует или не является строкой, возвращает <c>null</c>.
-    /// </summary>
-    public static string? GetPropertyOrDefault(this JsonElement element, string propertyName)
-    {
-        if (element.TryGetProperty(propertyName, out var prop) && prop.ValueKind == JsonValueKind.String)
-        {
-            return prop.GetString();
-        }
-        return null;
     }
 }

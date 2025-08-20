@@ -1,5 +1,7 @@
 using DistanceService.Application.Interfaces;
+using DistanceService.Application.Options;
 using DistanceService.Domain.Entities;
+using Microsoft.Extensions.Options;
 
 namespace DistanceService.Application.Services;
 
@@ -14,7 +16,7 @@ public sealed class AirportService : IAirportService
     private readonly IAirportRepository _repository;
     private readonly double _earthRadiusMiles;
 
-    public AirportService(IAirportRepository repository, Microsoft.Extensions.Options.IOptions<Options.DistanceOptions> distanceOptions)
+    public AirportService(IAirportRepository repository, IOptions<DistanceOptions> distanceOptions)
     {
         _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         if (distanceOptions == null) throw new ArgumentNullException(nameof(distanceOptions));
