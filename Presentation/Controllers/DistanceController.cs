@@ -11,7 +11,7 @@ namespace DistanceService.Presentation.Controllers;
 /// экземпляру <see cref="IAirportService"/>.
 /// </summary>
 // Контроллер API, защищён авторизацией. Все запросы к нему
-// требуют передачи валидного JWT токена в заголовке Authorization.
+// требуют передачи валидного Bearer‑токена в заголовке Authorization.
 [ApiController]
 [Authorize]
 [Route("api/[controller]")]
