@@ -15,6 +15,7 @@ public static class DependencyInjection
         services.Configure<CacheOptions>(configuration.GetSection("Cache"));
 
         services.AddHttpClient<IAirportRepository, HttpAirportRepository>();
+        services.AddHttpClient<IHttpService, HttpService>();
         services.AddSingleton(typeof(ICacheService<>), typeof(BoundedMemoryCacheService<>));
 
         return services;

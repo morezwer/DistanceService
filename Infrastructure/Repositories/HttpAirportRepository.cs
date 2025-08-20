@@ -63,24 +63,16 @@ public sealed class HttpAirportRepository : IAirportRepository
         // Throw for any unsuccessful status codes.
         response.EnsureSuccessStatusCode();
 
-        var dto = await response.Content
-            .ReadFromJsonAsync<AirportApiDto>(cancellationToken: cancellationToken)
+        var airport = await response.Content
+            .ReadFromJsonAsync<Airport>(cancellationToken: cancellationToken)
             .ConfigureAwait(false);
 
-        if (dto is null || dto.Location is not { Latitude: double lat, Longitude: double lon })
+        if (airport?.Location is null)
         {
             return null;
         }
 
-        var airport = new Airport
-        {
-            Iata = iata,
-            Latitude = lat,
-            Longitude = lon,
-            Name = dto.Name,
-            City = dto.City,
-            Country = dto.Country
-        };
+        airport.Iata = iata;
 
         // Добавляем в кэш. Продолжительность хранения берётся из
         // конфигурации (CacheDurationMinutes).
