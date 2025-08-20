@@ -1,4 +1,4 @@
-namespace DistanceService.Application.Options;
+namespace DistanceService.Domain;
 
 public class DistanceOptions
 {

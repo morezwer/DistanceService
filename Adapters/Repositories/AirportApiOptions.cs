@@ -1,4 +1,4 @@
-namespace DistanceService.Infrastructure.Options;
+namespace DistanceService.Adapters.Repositories;
 
 public class AirportApiOptions
 {

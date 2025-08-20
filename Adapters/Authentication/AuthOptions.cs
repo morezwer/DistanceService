@@ -1,4 +1,4 @@
-namespace DistanceService.Presentation.Options;
+namespace DistanceService.Adapters.Authentication;
 
 public class AuthOptions
 {

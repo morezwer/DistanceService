@@ -1,11 +1,11 @@
 using System.Net;
 using System.Net.Http.Json;
-using DistanceService.Application.Interfaces;
+using DistanceService.Domain;
 using DistanceService.Domain.Entities;
-using DistanceService.Infrastructure.Options;
+using DistanceService.Adapters.Services;
 using Microsoft.Extensions.Options;
 
-namespace DistanceService.Infrastructure.Repositories;
+namespace DistanceService.Adapters.Repositories;
 
 public sealed class HttpAirportRepository : IAirportRepository
 {

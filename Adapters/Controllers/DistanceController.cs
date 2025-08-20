@@ -1,9 +1,8 @@
-using DistanceService.Application.Interfaces;
-using DistanceService.Domain.Entities;
+using DistanceService.Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DistanceService.Presentation.Controllers;
+namespace DistanceService.Adapters.Controllers;
 
 [ApiController]
 [Authorize]

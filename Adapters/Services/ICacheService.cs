@@ -1,4 +1,4 @@
-namespace DistanceService.Application.Interfaces;
+namespace DistanceService.Adapters.Services;
 
 public interface ICacheService<T>
 {
