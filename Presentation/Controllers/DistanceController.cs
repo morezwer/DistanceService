@@ -1,4 +1,4 @@
-using DistanceService.Adapters.Ports;
+using DistanceService.Application.Interfaces;
 using DistanceService.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

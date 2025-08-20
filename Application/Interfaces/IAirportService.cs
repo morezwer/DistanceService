@@ -1,6 +1,6 @@
 using DistanceService.Domain.Entities;
 
-namespace DistanceService.Adapters.Ports;
+namespace DistanceService.Application.Interfaces;
 
 public interface IAirportService
 {

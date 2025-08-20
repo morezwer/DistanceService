@@ -1,4 +1,5 @@
-using DistanceService.Adapters;
+using DistanceService.Application;
+using DistanceService.Infrastructure;
 using DistanceService.Presentation.Authentication;
 using DistanceService.Presentation.Middleware;
 using DistanceService.Presentation.Options;
@@ -9,7 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddAdapters(builder.Configuration);
+builder.Services.AddApplication(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.Configure<AuthOptions>(builder.Configuration.GetSection("Auth"));
 
 builder.Services.AddAuthentication("Bearer")

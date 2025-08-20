@@ -1,7 +1,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DistanceService.Adapters.Ports;
+namespace DistanceService.Application.Interfaces;
 
 /// <summary>
 /// Универсальный HTTP-сервис для выполнения запросов и (де)сериализации ответов.
