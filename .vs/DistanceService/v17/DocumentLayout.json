@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Git\\DistanceService\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|c:\\git\\distanceservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|c:\\git\\distanceservice\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|c:\\git\\distanceservice\\distanceservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|solutionrelative:distanceservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|c:\\git\\distanceservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,27 +27,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Git\\DistanceService\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Git\\DistanceService\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAIwD0AAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T16:20:19.424Z",
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Git\\DistanceService\\Dockerfile",
+              "RelativeDocumentMoniker": "Dockerfile",
+              "ToolTip": "C:\\Git\\DistanceService\\Dockerfile",
+              "RelativeToolTip": "Dockerfile",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-08-20T16:57:13.078Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DistanceService",
-              "DocumentMoniker": "C:\\Git\\DistanceService\\DistanceService.csproj",
-              "RelativeDocumentMoniker": "DistanceService.csproj",
-              "ToolTip": "C:\\Git\\DistanceService\\DistanceService.csproj",
-              "RelativeToolTip": "DistanceService.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-08-20T16:19:31.57Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Git\\DistanceService\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Git\\DistanceService\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAIwEMAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T16:20:19.424Z",
               "EditorCaption": ""
             }
           ]
