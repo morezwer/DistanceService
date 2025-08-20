@@ -1,53 +1,21 @@
-using DistanceService.Application.Interfaces;
-using DistanceService.Application.Options;
-using DistanceService.Application.Services;
-using DistanceService.Infrastructure.Options;
-using DistanceService.Infrastructure.Repositories;
-using DistanceService.Infrastructure.Services;
+using DistanceService.Application;
+using DistanceService.Infrastructure;
+using DistanceService.Presentation.Authentication;
 using DistanceService.Presentation.Middleware;
 using DistanceService.Presentation.Options;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.OpenApi.Models;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.Configure<AirportApiOptions>(builder.Configuration.GetSection("AirportApi"));
-builder.Services.Configure<DistanceOptions>(builder.Configuration.GetSection("Distance"));
-builder.Services.Configure<CacheOptions>(builder.Configuration.GetSection("Cache"));
-builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("Jwt"));
+builder.Services.AddApplication(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.Configure<AuthOptions>(builder.Configuration.GetSection("Auth"));
 
-builder.Services.AddHttpClient<IAirportRepository, HttpAirportRepository>();
-
-builder.Services.AddSingleton(typeof(ICacheService<>), typeof(BoundedMemoryCacheService<>));
-builder.Services.AddScoped<IAirportService, AirportService>();
-
-var jwtSecret = builder.Configuration["Jwt:Secret"];
-if (string.IsNullOrEmpty(jwtSecret))
-    throw new InvalidOperationException("JWT secret not configured.");
-
-builder.Services.AddAuthentication(options =>
-    {
-        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    })
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = builder.Configuration["Jwt:Issuer"],
-            ValidAudience = builder.Configuration["Jwt:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSecret))
-        };
-    });
+builder.Services.AddAuthentication("Bearer")
+    .AddScheme<AuthenticationSchemeOptions, BearerTokenAuthenticationHandler>("Bearer", null);
 builder.Services.AddAuthorization();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -58,9 +26,8 @@ builder.Services.AddSwaggerGen(c =>
         Name = "Authorization",
         Type = SecuritySchemeType.Http,
         Scheme = "Bearer",
-        BearerFormat = "JWT",
         In = ParameterLocation.Header,
-        Description = "JWT Authorization header using the Bearer scheme."
+        Description = "Enter the bearer token.",
     });
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
@@ -70,7 +37,7 @@ builder.Services.AddSwaggerGen(c =>
                 Reference = new OpenApiReference
                 {
                     Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
+                    Id = "Bearer",
                 }
             },
             Array.Empty<string>()
@@ -79,12 +46,6 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
-
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
 app.UseMiddleware<ErrorHandlingMiddleware>();
 
@@ -98,5 +59,7 @@ app.MapGet("/healthz", () => Results.Ok("OK"))
    .AllowAnonymous();
 
 app.MapControllers();
+app.MapSwagger().RequireAuthorization();
+app.UseSwaggerUI();
 
 app.Run();
