@@ -1,6 +1,7 @@
 using System.Collections.Concurrent;
+using DistanceService.Application.Interfaces;
 
-namespace DistanceService.Adapters.Services;
+namespace DistanceService.Infrastructure.Services;
 
 public sealed class InMemoryCacheService<T> : ICacheService<T>
 {

@@ -1,7 +1,9 @@
+using DistanceService.Application.Interfaces;
+using DistanceService.Infrastructure.Options;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
 
-namespace DistanceService.Adapters.Services;
+namespace DistanceService.Infrastructure.Services;
 
 public sealed class BoundedMemoryCacheService<T> : ICacheService<T>, IDisposable
 {

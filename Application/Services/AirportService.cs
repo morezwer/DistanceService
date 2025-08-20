@@ -1,9 +1,9 @@
+using DistanceService.Application.Interfaces;
+using DistanceService.Application.Options;
 using DistanceService.Domain.Entities;
 using Microsoft.Extensions.Options;
 
-using DistanceService.Domain;
-
-namespace DistanceService.Domain.Services;
+namespace DistanceService.Application.Services;
 
 public sealed class AirportService : IAirportService
 {

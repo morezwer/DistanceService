@@ -1,9 +1,8 @@
-using DistanceService.Adapters.Authentication;
-using DistanceService.Adapters.Middleware;
-using DistanceService.Adapters.Repositories;
-using DistanceService.Adapters.Services;
-using DistanceService.Domain;
-using DistanceService.Domain.Services;
+using DistanceService.Application;
+using DistanceService.Infrastructure;
+using DistanceService.Presentation.Authentication;
+using DistanceService.Presentation.Middleware;
+using DistanceService.Presentation.Options;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.OpenApi.Models;
 
@@ -11,14 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.Configure<DistanceOptions>(builder.Configuration.GetSection("Distance"));
-builder.Services.Configure<AirportApiOptions>(builder.Configuration.GetSection("AirportApi"));
-builder.Services.Configure<CacheOptions>(builder.Configuration.GetSection("Cache"));
+builder.Services.AddApplication(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.Configure<AuthOptions>(builder.Configuration.GetSection("Auth"));
-
-builder.Services.AddScoped<IAirportService, AirportService>();
-builder.Services.AddHttpClient<IAirportRepository, HttpAirportRepository>();
-builder.Services.AddSingleton(typeof(ICacheService<>), typeof(BoundedMemoryCacheService<>));
 
 builder.Services.AddAuthentication("Bearer")
     .AddScheme<AuthenticationSchemeOptions, BearerTokenAuthenticationHandler>("Bearer", null);

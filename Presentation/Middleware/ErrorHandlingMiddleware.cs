@@ -3,7 +3,7 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 
-namespace DistanceService.Adapters.Middleware;
+namespace DistanceService.Presentation.Middleware;
 
 public sealed class ErrorHandlingMiddleware
 {
