@@ -1,4 +1,4 @@
-namespace DistanceService.Options;
+namespace DistanceService.Infrastructure.Options;
 
 /// <summary>
 /// Параметры, необходимые для конфигурации клиента аэропортов. Эти

@@ -1,4 +1,4 @@
-using DistanceService.Options;
+using DistanceService.Presentation.Options;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -7,7 +7,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace DistanceService.Controllers;
+namespace DistanceService.Presentation.Controllers;
 
 /// <summary>
 /// Простейший контроллер, выдающий JWT токен для указанного пользователя.

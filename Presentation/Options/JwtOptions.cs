@@ -1,4 +1,4 @@
-namespace DistanceService.Options;
+namespace DistanceService.Presentation.Options;
 
 /// <summary>
 /// Параметры JWT аутентификации, не содержащие секретных данных.

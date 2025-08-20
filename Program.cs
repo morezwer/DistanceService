@@ -1,8 +1,11 @@
 using DistanceService.Application.Interfaces;
+using DistanceService.Application.Options;
 using DistanceService.Application.Services;
+using DistanceService.Infrastructure.Options;
 using DistanceService.Infrastructure.Repositories;
 using DistanceService.Infrastructure.Services;
-using DistanceService.Options;
+using DistanceService.Presentation.Middleware;
+using DistanceService.Presentation.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
@@ -83,7 +86,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseMiddleware<DistanceService.Middleware.ErrorHandlingMiddleware>();
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 
