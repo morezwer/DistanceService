@@ -17,12 +17,9 @@
     injection configuration in Program.cs.
   -->
   <ItemGroup>
-    <!-- Provides ASP.NET Core hosting and minimal API support -->
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="9.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="9.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.10" />
   </ItemGroup>
 
   <!-- Указываем, что файл конфигурации должен копироваться в папку
