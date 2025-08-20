@@ -3,40 +3,12 @@
   "WorkspaceRootPath": "C:\\Git\\DistanceService\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|c:\\git\\distanceservice\\infrastructure\\repositories\\httpairportrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|solutionrelative:infrastructure\\repositories\\httpairportrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|c:\\git\\distanceservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|c:\\git\\distanceservice\\extensions\\jsonelementextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|solutionrelative:extensions\\jsonelementextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|c:\\git\\distanceservice\\application\\services\\airportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|solutionrelative:application\\services\\airportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|c:\\git\\distanceservice\\infrastructure\\services\\boundedmemorycacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|solutionrelative:infrastructure\\services\\boundedmemorycacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|c:\\git\\distanceservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|c:\\git\\distanceservice\\infrastructure\\options\\cacheoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|solutionrelative:infrastructure\\options\\cacheoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|c:\\git\\distanceservice\\infrastructure\\options\\airportapioptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|solutionrelative:infrastructure\\options\\airportapioptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|c:\\git\\distanceservice\\application\\interfaces\\iairportrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|solutionrelative:application\\interfaces\\iairportrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|c:\\git\\distanceservice\\domain\\entities\\airport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|solutionrelative:domain\\entities\\airport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|c:\\git\\distanceservice\\distanceservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{171491A0-6BD2-4111-8E3E-EBFC8B07E3E1}|DistanceService.csproj|solutionrelative:distanceservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,112 +26,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "JsonElementExtensions.cs",
-              "DocumentMoniker": "C:\\Git\\DistanceService\\Extensions\\JsonElementExtensions.cs",
-              "RelativeDocumentMoniker": "Extensions\\JsonElementExtensions.cs",
-              "ToolTip": "C:\\Git\\DistanceService\\Extensions\\JsonElementExtensions.cs",
-              "RelativeToolTip": "Extensions\\JsonElementExtensions.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T15:25:46.062Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AirportService.cs",
-              "DocumentMoniker": "C:\\Git\\DistanceService\\Application\\Services\\AirportService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\AirportService.cs",
-              "ToolTip": "C:\\Git\\DistanceService\\Application\\Services\\AirportService.cs",
-              "RelativeToolTip": "Application\\Services\\AirportService.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAADwvzUAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T15:24:38.915Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "HttpAirportRepository.cs",
-              "DocumentMoniker": "C:\\Git\\DistanceService\\Infrastructure\\Repositories\\HttpAirportRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\HttpAirportRepository.cs",
-              "ToolTip": "C:\\Git\\DistanceService\\Infrastructure\\Repositories\\HttpAirportRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\HttpAirportRepository.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAADwv1YAAAAYAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Git\\DistanceService\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Git\\DistanceService\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAIwD0AAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T15:24:15.898Z",
+              "WhenOpened": "2025-08-20T16:20:19.424Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Git\\DistanceService\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Git\\DistanceService\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
+              "DocumentIndex": 1,
+              "Title": "DistanceService",
+              "DocumentMoniker": "C:\\Git\\DistanceService\\DistanceService.csproj",
+              "RelativeDocumentMoniker": "DistanceService.csproj",
+              "ToolTip": "C:\\Git\\DistanceService\\DistanceService.csproj",
+              "RelativeToolTip": "DistanceService.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-20T15:22:55.304Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BoundedMemoryCacheService.cs",
-              "DocumentMoniker": "C:\\Git\\DistanceService\\Infrastructure\\Services\\BoundedMemoryCacheService.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Services\\BoundedMemoryCacheService.cs",
-              "ToolTip": "C:\\Git\\DistanceService\\Infrastructure\\Services\\BoundedMemoryCacheService.cs",
-              "RelativeToolTip": "Infrastructure\\Services\\BoundedMemoryCacheService.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAcwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T15:22:05.228Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AirportApiOptions.cs",
-              "DocumentMoniker": "C:\\Git\\DistanceService\\Infrastructure\\Options\\AirportApiOptions.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Options\\AirportApiOptions.cs",
-              "ToolTip": "C:\\Git\\DistanceService\\Infrastructure\\Options\\AirportApiOptions.cs",
-              "RelativeToolTip": "Infrastructure\\Options\\AirportApiOptions.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T15:21:53.925Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CacheOptions.cs",
-              "DocumentMoniker": "C:\\Git\\DistanceService\\Infrastructure\\Options\\CacheOptions.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Options\\CacheOptions.cs",
-              "ToolTip": "C:\\Git\\DistanceService\\Infrastructure\\Options\\CacheOptions.cs",
-              "RelativeToolTip": "Infrastructure\\Options\\CacheOptions.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T15:21:48.75Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IAirportRepository.cs",
-              "DocumentMoniker": "C:\\Git\\DistanceService\\Application\\Interfaces\\IAirportRepository.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\IAirportRepository.cs",
-              "ToolTip": "C:\\Git\\DistanceService\\Application\\Interfaces\\IAirportRepository.cs",
-              "RelativeToolTip": "Application\\Interfaces\\IAirportRepository.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAADwvxUAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T15:18:57.924Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Airport.cs",
-              "DocumentMoniker": "C:\\Git\\DistanceService\\Domain\\Entities\\Airport.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\Airport.cs",
-              "ToolTip": "C:\\Git\\DistanceService\\Domain\\Entities\\Airport.cs",
-              "RelativeToolTip": "Domain\\Entities\\Airport.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T15:18:52.88Z"
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-20T16:19:31.57Z",
+              "EditorCaption": ""
             }
           ]
         }

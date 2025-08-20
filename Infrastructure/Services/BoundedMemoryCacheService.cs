@@ -5,12 +5,6 @@ using Microsoft.Extensions.Options;
 
 namespace DistanceService.Infrastructure.Services;
 
-/// <summary>
-/// Потокобезопасный кэш в памяти с ограничением на количество элементов.
-/// Использует <see cref="MemoryCache"/> для автоматического удаления
-/// просроченных записей и контроля размера кэша.
-/// </summary>
-/// <typeparam name="T">Тип хранимых значений.</typeparam>
 public sealed class BoundedMemoryCacheService<T> : ICacheService<T>, IDisposable
 {
     private readonly MemoryCache _cache;
@@ -23,13 +17,11 @@ public sealed class BoundedMemoryCacheService<T> : ICacheService<T>, IDisposable
         _cache = new MemoryCache(new MemoryCacheOptions { SizeLimit = maxEntries });
     }
 
-    /// <inheritdoc />
     public bool TryGet(string key, out T value)
     {
         return _cache.TryGetValue(key, out value!);
     }
 
-    /// <inheritdoc />
     public void Set(string key, T value, TimeSpan expiration)
     {
         var entryOptions = new MemoryCacheEntryOptions

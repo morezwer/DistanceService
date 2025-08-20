@@ -5,12 +5,6 @@ using Microsoft.Extensions.Options;
 
 namespace DistanceService.Application.Services;
 
-/// <summary>
-/// Реализует логику вычисления расстояния между аэропортами. Этот
-/// сервис получает данные об аэропортах через репозиторий,
-/// выполняет валидацию входных параметров и применяет формулу
-/// гаверсина для расчёта расстояния по большой окружности в милях.
-/// </summary>
 public sealed class AirportService : IAirportService
 {
     private readonly IAirportRepository _repository;
@@ -23,7 +17,6 @@ public sealed class AirportService : IAirportService
         _earthRadiusMiles = distanceOptions.Value.EarthRadiusMiles;
     }
 
-    /// <inheritdoc />
     public async Task<DistanceResponse> GetDistanceAsync(string fromIata, string toIata, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(fromIata))
@@ -31,14 +24,9 @@ public sealed class AirportService : IAirportService
         if (string.IsNullOrWhiteSpace(toIata))
             throw new ArgumentException("Destination IATA code is required", nameof(toIata));
 
-        // Normalise IATA codes to uppercase to avoid case sensitive
-        // mismatches.
         fromIata = fromIata.Trim().ToUpperInvariant();
         toIata = toIata.Trim().ToUpperInvariant();
 
-        // Retrieve airports from the repository.  If either airport
-        // cannot be found we throw an exception that will be
-        // translated into a 404 by the controller layer.
         var fromAirport = await _repository.GetAirportAsync(fromIata, cancellationToken).ConfigureAwait(false);
         if (fromAirport is null)
         {
@@ -61,17 +49,6 @@ public sealed class AirportService : IAirportService
         };
     }
 
-    /// <summary>
-    /// Вычисляет расстояние по большой окружности в милях между двумя
-    /// точками, заданными их широтой и долготой, с использованием
-    /// формулы гаверсина. Метод рассматривает Землю как идеальный
-    /// шар.
-    /// </summary>
-    /// <param name="lat1">Широта первой точки в градусах.</param>
-    /// <param name="lon1">Долгота первой точки в градусах.</param>
-    /// <param name="lat2">Широта второй точки в градусах.</param>
-    /// <param name="lon2">Долгота второй точки в градусах.</param>
-    /// <returns>Расстояние между двумя точками в милях.</returns>
     private double CalculateDistanceInMiles(double lat1, double lon1, double lat2, double lon2)
     {
         double ToRadians(double degrees) => Math.PI * degrees / 180.0;

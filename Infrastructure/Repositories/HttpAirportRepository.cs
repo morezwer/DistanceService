@@ -7,14 +7,6 @@ using Microsoft.Extensions.Options;
 
 namespace DistanceService.Infrastructure.Repositories;
 
-/// <summary>
-/// Получает данные об аэропортах из общедоступного сервиса
-/// continent.ru. Результаты кэшируются, чтобы уменьшить количество
-/// HTTP‑запросов и повысить производительность. При необходимости
-/// данный репозиторий можно заменить реализацией, использующей
-/// базу данных, зарегистрировав другой IAirportRepository в
-/// контейнере зависимостей.
-/// </summary>
 public sealed class HttpAirportRepository : IAirportRepository
 {
     private readonly HttpClient _httpClient;
@@ -31,7 +23,6 @@ public sealed class HttpAirportRepository : IAirportRepository
         _options = options.Value;
     }
 
-    /// <inheritdoc />
     public async Task<Airport?> GetAirportAsync(string iata, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(iata))
@@ -40,27 +31,22 @@ public sealed class HttpAirportRepository : IAirportRepository
         }
         iata = iata.Trim().ToUpperInvariant();
 
-        // Check cache first
         if (_cache.TryGet(iata, out var cached))
         {
             return cached;
         }
 
-        // Формируем URL, используя базовый адрес из конфигурации.
         var requestUri = _options.BaseUrl + Uri.EscapeDataString(iata);
 
-        // Perform HTTP GET
         using var response = await _httpClient
             .GetAsync(requestUri, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
             .ConfigureAwait(false);
 
-        // If the service returns 404 simply indicate that the airport
-        // was not found.
         if (response.StatusCode == HttpStatusCode.NotFound)
         {
             return null;
         }
-        // Throw for any unsuccessful status codes.
+
         response.EnsureSuccessStatusCode();
 
         var airport = await response.Content
@@ -74,8 +60,6 @@ public sealed class HttpAirportRepository : IAirportRepository
 
         airport.Iata = iata;
 
-        // Добавляем в кэш. Продолжительность хранения берётся из
-        // конфигурации (CacheDurationMinutes).
         _cache.Set(iata, airport, TimeSpan.FromMinutes(_options.CacheDurationMinutes));
 
         return airport;

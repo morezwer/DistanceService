@@ -59,7 +59,7 @@ app.MapGet("/healthz", () => Results.Ok("OK"))
    .AllowAnonymous();
 
 app.MapControllers();
-app.MapSwagger().RequireAuthorization();
+app.MapSwagger();
 app.UseSwaggerUI();
 
 app.Run();
