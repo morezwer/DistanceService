@@ -1,8 +1,7 @@
 using System.Net;
-using System.Text.Json;
+using System.Net.Http.Json;
 using DistanceService.Application.Interfaces;
 using DistanceService.Domain.Entities;
-using DistanceService.Extensions;
 using DistanceService.Infrastructure.Options;
 using Microsoft.Extensions.Options;
 
@@ -51,7 +50,9 @@ public sealed class HttpAirportRepository : IAirportRepository
         var requestUri = _options.BaseUrl + Uri.EscapeDataString(iata);
 
         // Perform HTTP GET
-        using var response = await _httpClient.GetAsync(requestUri, cancellationToken).ConfigureAwait(false);
+        using var response = await _httpClient
+            .GetAsync(requestUri, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
+            .ConfigureAwait(false);
 
         // If the service returns 404 simply indicate that the airport
         // was not found.
@@ -62,19 +63,11 @@ public sealed class HttpAirportRepository : IAirportRepository
         // Throw for any unsuccessful status codes.
         response.EnsureSuccessStatusCode();
 
-        using var stream = await response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-        using var jsonDoc = await JsonDocument.ParseAsync(stream, cancellationToken: cancellationToken).ConfigureAwait(false);
+        var dto = await response.Content
+            .ReadFromJsonAsync<AirportApiDto>(cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
 
-        var root = jsonDoc.RootElement;
-
-        // Extract latitude and longitude from the nested location
-        // object. If either field is missing we treat the airport as
-        // invalid and return null.
-        if (!root.TryGetProperty("location", out var locElem) ||
-            !locElem.TryGetProperty("lat", out var latElem) ||
-            !locElem.TryGetProperty("lon", out var lonElem) ||
-            !latElem.TryGetDouble(out var lat) ||
-            !lonElem.TryGetDouble(out var lon))
+        if (dto is null || dto.Location is not { Latitude: double lat, Longitude: double lon })
         {
             return null;
         }
@@ -84,9 +77,9 @@ public sealed class HttpAirportRepository : IAirportRepository
             Iata = iata,
             Latitude = lat,
             Longitude = lon,
-            Name = root.GetPropertyOrDefault("name"),
-            City = root.GetPropertyOrDefault("city"),
-            Country = root.GetPropertyOrDefault("country")
+            Name = dto.Name,
+            City = dto.City,
+            Country = dto.Country
         };
 
         // Добавляем в кэш. Продолжительность хранения берётся из
