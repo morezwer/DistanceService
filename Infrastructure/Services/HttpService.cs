@@ -2,9 +2,9 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using DistanceService.Adapters.Ports;
+using DistanceService.Application.Interfaces;
 
-namespace DistanceService.Adapters.Services;
+namespace DistanceService.Infrastructure.Services;
 
 public sealed class HttpService : IHttpService
 {

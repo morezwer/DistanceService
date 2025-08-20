@@ -1,26 +1,29 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
+    <!-- Target .NET 8 for the web service -->
     <TargetFramework>net8.0</TargetFramework>
+    <!-- Enable nullable reference types and implicit global usings -->
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <!--
+    The project intentionally avoids reliance on unverified third‑party
+    packages. All of the dependencies declared here are part of the
+    official .NET ecosystem and are widely accepted. Should you wish
+    to add database providers or other integrations later on, those
+    can be introduced as additional modules via the dependency
+    injection configuration in Program.cs.
+  -->
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="9.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="9.0.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Remove="Adapters/**/*.cs" />
-    <Compile Remove="Domain/**/*.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="Adapters/Adapters.csproj" />
-    <ProjectReference Include="Domain/Domain.csproj" />
-  </ItemGroup>
-
+  <!-- Указываем, что файл конфигурации должен копироваться в папку
+       публикации. Это необходимо для корректного поиска настроек
+       контейнером и приложением. -->
   <ItemGroup>
     <None Update="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
