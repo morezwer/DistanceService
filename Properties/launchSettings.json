@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "DistanceService": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:62446;http://localhost:62447"
+    }
+  }
+}
