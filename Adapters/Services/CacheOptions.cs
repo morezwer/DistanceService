@@ -1,4 +1,4 @@
-namespace DistanceService.Infrastructure.Options;
+namespace DistanceService.Adapters.Services;
 
 public class CacheOptions
 {

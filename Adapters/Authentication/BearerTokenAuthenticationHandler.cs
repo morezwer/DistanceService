@@ -1,11 +1,10 @@
-using DistanceService.Presentation.Options;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System.Security.Claims;
 using System.Text.Encodings.Web;
 
-namespace DistanceService.Presentation.Authentication;
+namespace DistanceService.Adapters.Authentication;
 
 public sealed class BearerTokenAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
 {
